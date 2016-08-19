@@ -5,11 +5,24 @@ export default class ItemsList extends Component {
   static propTypes = {
     items: PropTypes.array.isRequired,
     addItem: PropTypes.func.isRequired,
-    delItem: PropTypes.func.isRequired
+    delItem: PropTypes.func.isRequired,
+    changeItem: PropTypes.func.isRequired,
+
+    changeOtherState: PropTypes.func.isRequired
   };
 
+  // shouldComponentUpdate (nextProps) {
+  //   debugger;
+  //   console.dir(nextProps);
+  //   console.dir(this.props);
+  //   console.dir(this.props !== nextProps);
+  //
+  //   return true;
+  // }
+
   render() {
-    const { items, addItem, delItem } = this.props;
+    const { items, addItem, delItem, changeItem, changeOtherState } = this.props;
+    console.log('change');
 
     return (
       <div>
@@ -24,9 +37,11 @@ export default class ItemsList extends Component {
               text={item.text}
               key={item.id}
               removeItemBtnClick={delItem}
+              changeItemBtnClick={changeItem}
             />
           )}
         </ul>
+        <button onClick={() => changeOtherState()} className='btn'>ChangeOtherState</button>
       </div>
     )
   }

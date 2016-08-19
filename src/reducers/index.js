@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 import items from './items'
-// import user from './user'
+import otherState from './otherState'
+import onOff from './onOff'
 
 export default combineReducers({
   items,
-  someData: []
+  otherState,
+  onOff
 })

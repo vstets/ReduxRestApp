@@ -3,12 +3,12 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import * as PageActions from '../actions/PageActions'
-import ItemsList from '../components/ItemsList'
+import OnOff from '../components/OnOff'
 
 
 function mapStateToProps(state) {
   return {
-    items: state.items
+    onOff: state.onOff
   }
 }
 
@@ -16,4 +16,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(PageActions, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsList)
+export default connect(mapStateToProps, mapDispatchToProps)(OnOff)

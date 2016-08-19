@@ -1,2 +1,5 @@
 export const ADD_ITEM = 'ADD_ITEM'
+export const CHANGE_ITEM = 'CHANGE_ITEM'
 export const DEL_ITEM = 'DEL_ITEM'
+export const CHANGE_OTHER_STATE = 'CHANGE_OTHER_STATE'
+export const ONOFF_TOGGLE = 'ONOFF_TOGGLE'

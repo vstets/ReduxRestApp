@@ -1,5 +1,6 @@
 import {
   ADD_ITEM,
+  CHANGE_ITEM,
   DEL_ITEM
 } from '../constants/App'
 
@@ -32,6 +33,12 @@ const items = (state = [{id: 0, text: 'item_0'}], action) => {
         ...state,
         item(undefined, action)
       ]
+    case CHANGE_ITEM:
+      return state.map(item =>
+        item.id === action.id ?
+          Object.assign({}, item, { id: getNextItemId(), text: 'item_' + getItemId() }) :
+          item
+      )
     case DEL_ITEM:
       return state.filter(item =>
         item.id !== action.id
